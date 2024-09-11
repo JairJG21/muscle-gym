@@ -1,0 +1,190 @@
+---
+import { Icon } from 'astro-icon/components'
+import Button from './Button.astro'
+---
+
+<div class="flex justify-between items-center pe-0 ps-4 py-2 bg-[#12121288] backdrop-blur-lg fixed w-full top-0 z-20 h-16 md:h-auto">
+    <div>
+        <a href="">
+            <h1 class="font-lacquer text-white text-4xl md:text-3xl"><b class="text-custom-red">MUSCLE</b> GYM</h1>
+        </a>
+    </div>
+    <div class="hidden md:block">
+        <ul class="flex items-center gap-8 [&>li:not(:last-child)>a]:font-lacquer text-sm">
+            <li class="relative nav-item">
+                <a href="#inicio" class="active">Inicio</a>
+            </li>
+            <li class="relative nav-item">
+                <a href="#nosotros">Nosotros</a>
+            </li>
+            <li class="relative nav-item">
+                <a href="#entrenador">Entrenador</a>
+            </li>
+            <li class="relative nav-item">
+                <a href="#precios">Precios</a>
+            </li>
+            <!-- <li class="relative nav-item">
+                <a href="#testimoniales">Testimoniales</a>
+            </li> -->
+            <li class="relative nav-item">
+                <Button title="Galeria" icon="mdi:image" clases="text-xl" font="font-lacquer" url="#galeria"/>
+            </li>
+        </ul>
+    </div>
+    <div class="dropdown md:hidden">
+        <div class="drawer">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content">
+              <!-- Page content here -->
+              <label for="my-drawer" role="button" class="btn btn-ghost drawer-button md:hidden"><Icon name="mdi:menu" class="text-4xl md:text-3xl text-custom-red" /></label>
+              <!-- <label for="my-drawer" class="btn btn-primary drawer-button">Open drawer</label> -->
+            </div>
+            <div class="drawer-side">
+                <ul class="menu min-h-full bg-base-200 w-80 p-4 flex items-center gap-8 [&>li:not(:last-child)>a]:font-lacquer text-white text-lg">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"><Icon name="mdi:close" class="text-3xl"/></label>
+                    <li class="relative nav-item2">
+                        <a href="#inicio" class="active">Inicio</a>
+                    </li>
+                    <li class="relative nav-item2">
+                        <a href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="relative nav-item2">
+                        <a href="#entrenador">Entrenador</a>
+                    </li>
+                    <li class="relative nav-item2">
+                        <a href="#precios">Precios</a>
+                    </li>
+                    <li class="relative nav-item2">
+                        <a href="#testimoniales">Testimoniales</a>
+                    </li>
+                    <li class="relative nav-item2">
+                        <Button title="Galeria" icon="mdi:image" clases="text-xl" font="font-lacquer" url="#galeria"/>
+                    </li>
+                </ul>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+<style>
+
+    .nav-item a:hover {
+        text-shadow: #f7f7f7 0px 0px 10px;
+    }
+
+    .nav-item a.active {
+        text-shadow: #f7f7f7 0px 0px 10px;
+    }
+
+    .nav-item a {
+        transition: all 0.3s ease;
+        color: #fff;
+    }
+
+    .nav-item a:hover::after {
+        content: "";
+        width: 35px;
+        height: 5px;
+        background-color: #fff;
+        border-radius: 9999px;
+        position: absolute;
+        bottom: -7px;
+        left: 50%;
+        transform: translate(-50%);
+        animation: fade 0.3s both;
+        animation-fill-mode: both;
+    }
+
+    .nav-item a.active:hover::after {
+        content: "";
+        width: 35px;
+        height: 5px;
+        background-color: transparent;
+        border-radius: 9999px;
+        position: absolute;
+        bottom: -7px;
+        left: 50%;
+        transform: translate(-50%);
+        animation: fade 0.3s;
+        animation-fill-mode: both;
+    }
+
+    .active::before {
+        content: "";
+        width: 35px;
+        height: 5px;
+        background-color: #ed1c24;
+        border-radius: 9999px;
+        position: absolute;
+        bottom: -7px;
+        left: 50%;
+        transform: translate(-50%);
+        animation: fade 0.2s normal;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+            width: 0;
+        }
+        to {
+            opacity: 1;
+            width: 35px;
+        }
+    }
+
+    .nav-item2 a {
+        background-color: transparent !important;
+        padding-bottom: 0px;
+        transition: all 0.3s ease;
+        color: #fff;
+    }
+
+    .nav-item2 a:hover {
+        text-shadow: #f7f7f7 0px 0px 10px;
+    }
+
+    .nav-item2 a.active {
+        text-shadow: #f7f7f7 0px 0px 10px;
+    }
+</style>
+
+<script>
+    function handleScroll() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-item a');
+  const navLinks2 = document.querySelectorAll('.nav-item2 a');
+  
+
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (pageYOffset >= sectionTop - sectionHeight   
+ / 2.5) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');   
+
+    }
+  });
+
+  navLinks2.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');   
+
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScroll);
+</script>
