@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'astro:image'; // Asegúrate de que la ruta sea correcta
+import Image from 'astro:image';
 
 function AstroImage({ src, alt, ...rest }) {
   return (
