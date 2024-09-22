@@ -4,18 +4,12 @@ import { Map, Marker } from 'pigeon-maps';
 
 const MapComponent = () => {
 
-  const [scrollBlocked, setScrollBlocked] = useState(true);
-
-  const handleMapClick = () => {
-      setScrollBlocked(false);
-  };
 
   return (
     <Map
       height={400}
       defaultCenter={[18.696713, -100.369824]}
       defaultZoom={15}
-      metaWheelZoom={scrollBlocked}
     >
       <Marker
         width={30}
