@@ -1,0 +1,138 @@
+---
+import { Icon } from "astro-icon/components";
+
+
+---
+
+<section class="mt-32 scroll-mt-20" id="galeria">
+  <div class="gallery">
+      <div data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
+        <img class="h-auto max-w-full rounded-lg" src="/img/slide1.jpg" alt="">
+      </div>
+      <div data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
+        <img class="h-auto max-w-full rounded-lg" src="/img/slide2.jpg" alt="">
+      </div>
+      <div data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
+        <img class="h-auto max-w-full rounded-lg" src="/img/slide3.jpg" alt="">
+      </div>				
+      <div data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
+        <img class="h-auto max-w-full rounded-lg" src="/img/slide4.jpg" alt="">
+      </div>
+      <div data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
+        <img class="h-auto max-w-full rounded-lg" src="/img/slide5.jpg" alt="">
+      </div>
+      <div data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom">
+        <img class="h-auto max-w-full rounded-lg" src="/img/slide6.jpg" alt="">
+      </div>
+  </div>
+</section>
+
+<div id="imageModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 hidden justify-center items-center">
+  <span id="closeModal" class="absolute text-white text-3xl cursor-pointer w-10"><Icon name="mdi:close" /></span>
+  <img id="modalImage" class="max-w-full max-h-full">
+  <button id="prevImage" class="absolute left-5 text-white text-3xl cursor-pointer"><Icon name="mdi:arrow-left-circle" /></button>
+  <button id="nextImage" class="absolute right-5 text-white text-3xl cursor-pointer"><Icon name="mdi:arrow-right-circle" /></button>
+</div>
+
+<style>
+  .gallery {
+		max-width: 80%;
+		margin: auto;
+		margin-top: 50px;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 10px;
+	}
+	.gallery div {
+		flex: auto;
+		overflow: hidden;
+		border-radius: 20px;
+		transition: opacity 0.3s ease;
+	}
+	.gallery img {
+		height: 200px;
+		width: auto;
+		min-width: 100%;
+		object-fit: cover;
+		transition: scale 0.3s ease;
+	}
+	.gallery img:hover {
+		scale: 1.1;
+	}
+  #prevImage, #nextImage {
+		background: none;
+		border: none;
+		font-size: 50px;
+		padding: 0px;
+		cursor: pointer;
+		user-select: none;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	#prevImage svg, #nextImage svg {
+		width: 50px;
+	}
+	#prevImage:hover, #nextImage:hover {
+		color: lightgray;
+	}
+	#closeModal {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 40px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	#imageModal {
+		z-index: 9999 !important;
+		background-color: #252422d7;
+		backdrop-filter: blur(3px);
+	}
+</style>
+
+<script is:inline>
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const images = document.querySelectorAll('.gallery img');
+		const modal = document.getElementById('imageModal');
+		const modalImage = document.getElementById('modalImage');
+		const closeModal = document.getElementById('closeModal');
+		const prevImage = document.getElementById('prevImage');
+		const nextImage = document.getElementById('nextImage');
+
+		if (closeModal) {
+			let currentImageIndex = 0;
+
+			images.forEach((image, index) => {
+				image.addEventListener('click', () => {
+				currentImageIndex = index;
+				modalImage.src = images[currentImageIndex].src;
+				modal.style.display = 'flex';
+				});
+			});
+
+			closeModal.addEventListener('click', () => {
+				modal.style.display = 'none';
+			});
+
+			modal.addEventListener('click', (e) => {
+				if (e.target === modal) {
+				modal.style.display = 'none';
+				}
+			});
+
+			prevImage.addEventListener('click', (e) => {
+				e.stopPropagation();
+				currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+				modalImage.src = images[currentImageIndex].src;
+			});
+
+			nextImage.addEventListener('click', (e) => {
+				e.stopPropagation();
+				currentImageIndex = (currentImageIndex + 1) % images.length;
+				modalImage.src = images[currentImageIndex].src;
+			});	
+		}
+	});
+</script>

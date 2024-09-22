@@ -5,7 +5,7 @@ import Button from "../components/Button.astro";
 import { Icon } from "astro-icon/components";
 import CarruselOne from "../components/CarruselOne";
 import Mapa from "../components/Mapa";
-import Galeria from "../components/Galeria";
+import Galeria from "../components/Galeria.astro";
 ---
 
 <Layout title="Muscle GYM | La disciplina es el puente entre tus metas y logros.">
@@ -124,7 +124,7 @@ import Galeria from "../components/Galeria";
       <h1 class="font-lacquer text-3xl md:text-6xl uppercase">Galeria</h1>
       <p class="mt-4 font-robotoMono text-xs md:text-sm w-full px-5 m-auto">Nuestra galería es un vistazo a la vida en Muscle GYM. Aquí encontrarás imágenes de nuestras instalaciones y de nuestros clientes en acción, superando retos y alcanzando metas.</p>
       <div>
-        <Galeria client:visible />
+        <Galeria />
       </div>
     </div>
   </section>
