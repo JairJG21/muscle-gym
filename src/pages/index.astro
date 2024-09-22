@@ -4,11 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Button from "../components/Button.astro";
 import { Icon } from "astro-icon/components";
 import CarruselOne from "../components/CarruselOne";
-import { Image } from "astro:assets";
-import coachImage from "../../public/img/coach.webp";
-import logoGym from "../../public/img/logoGym.webp";
 import Mapa from "../components/Mapa";
-import CarruselTwo from "../components/CarruselTwo";
 import Galeria from "../components/Galeria";
 ---
 
@@ -34,7 +30,7 @@ import Galeria from "../components/Galeria";
   <section class="flex justify-between items-center flex-col lg:flex-row px-5 py-14" id="nosotros">
     <div class="w-full lg:w-1/2 text-center lg:text-start lg:pe-10">
       <span class="font-robotoMono text-sm ">Tu éxito es nuestra prioridad</span>
-      <Image src={logoGym} alt={'Logo de Muscle GYM'} class={'w-full sm:w-1/2 m-auto lg:ms-1 mt-3'}/>
+      <img src="/img/logoGym.webp" class="w-full sm:w-1/2 m-auto lg:ms-1 mt-3" alt="Logo de Muscle GYM">
       <p class="font-robotoMono text-sm mb-7 ">Bienvenidos a Muscle GYM, donde cada entrenamiento te acerca a una mejor versión de ti mismo.</p>
       <p class="font-robotoMono text-sm ">Fundado con la misión de transformar vidas a través del ejercicio, Muscle GYM se dedica a proporcionar un ambiente motivador y de apoyo para que todos nuestros miembros alcancen sus objetivos. En Muscle GYM, creemos que la fuerza no es solo física, sino también mental y emocional. Únete a nosotros y descubre cómo puedes superar tus límites y alcanzar tu máximo potencial.</p>
       <div class="flex items-center justify-center lg:justify-start mt-5 gap-3">
@@ -90,7 +86,7 @@ import Galeria from "../components/Galeria";
         <span class="font-protestRevolution"><b class="text-[90px] md:text-[180px]">MUSCLE</b></span>
         <span class="font-protestRevolution"><b class="text-[80px] md:text-[160px]">GYM</b></span>
     </div>
-	<Image src={coachImage} alt="Foto del coach de Muscle GYM" class="absolute w-[390px] bottom-0 left-0" />
+    <img src="/img/coach.webp" alt="Foto del coach de Muscle GYM" class="absolute w-[390px] bottom-0 left-0">
   </section>
   <section class="mt-20" id="precios">
     <div class="text-center">
