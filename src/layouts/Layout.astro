@@ -10,15 +10,17 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import 'aos/dist/aos.css'; 
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Transforma tu cuerpo y mente en Muscle GYM. Ofrecemos entrenamiento personalizado, equipo de última generación y un ambiente motivador para alcanzar tus metas de fitness. ¡Únete hoy y comienza tu camino hacia una vida más saludable!" />
+		<meta name="keywords" content="gimnasio, entrenamiento personalizado, fitness, pérdida de peso, musculación, tonificación, ejercicio, entrenamiento funcional, salud y bienestar, clases grupales, entrenadores personales, nutrición deportiva, fuerza y resistencia, cardio, vida saludable.">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/img/logoGym.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -56,6 +58,12 @@ const { title } = Astro.props;
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXXE8X8CXH"></script>
 <script>
+
+import AOS from "aos"; 
+	AOS.init({
+		offset: 40,
+	});
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
