@@ -28,6 +28,7 @@
     "flickr-justified-gallery": "^2.2.0",
     "imagesloaded": "^5.0.0",
     "lg-thumbnail": "^1.2.1",
+    "ol": "^10.2.0",
     "pigeon-maps": "^0.21.6",
     "pigeon-overlay": "^0.2.3",
     "react": "^18.3.1",
