@@ -11,7 +11,7 @@ import Galeria from "../components/Galeria.astro";
 <Layout title="Muscle GYM | La disciplina es el puente entre tus metas y logros.">
   <Navbar />
   <section class="bg-cover bg-center bg-[url(/img/background_portada.webp)] h-screen relative overlay" id="inicio">
-    <div class="flex justify-end md:justify-between items-start md:items-end h-full pb-5 md:pb-10 px-5 z-10 relative flex-col md:flex-row">
+    <div class="flex justify-end md:justify-between items-start md:items-end h-full pb-5 md:pb-10 px-5 z-10 relative flex-col md:flex-row lg:px-20">
       <div>
         <h3 class="font-lacquer  text-3xl md:text-6xl py-2">Come. Duerme.</h3>
         <h1 class="font-protestRevolution font-bold text-custom-red text-6xl md:text-9xl">ENTRENA</h1>
@@ -27,7 +27,7 @@ import Galeria from "../components/Galeria.astro";
   <div class="bg-gradient-to-r from-custom-red2 bg-[#a5a5a5] to-custom-red py-10 md:py-20">
     <h2 class="font-lacquer  text-center text-3xl md:text-5xl">“la disciplina es el puente entre tus metas y logros”</h2>
   </div>
-  <section class="flex justify-between items-center flex-col lg:flex-row px-5 py-14" id="nosotros">
+  <section class="flex justify-between items-center flex-col lg:flex-row px-5 py-14 lg:px-20" id="nosotros">
     <div class="w-full lg:w-1/2 text-center lg:text-start lg:pe-10">
       <span class="font-robotoMono text-sm ">Tu éxito es nuestra prioridad</span>
       <img src="/img/logoGym.webp" class="w-full sm:w-1/2 m-auto lg:ms-1 mt-3" alt="Logo de Muscle GYM">
@@ -65,7 +65,7 @@ import Galeria from "../components/Galeria.astro";
   <section class="mt-32 bg-gradient-to-r from-custom-red2 to-custom-red px-3 py-10 relative h-[800px] lg:h-[650px] flex flex-col lg:justify-center justify-between lg:flex-row-reverse" id="entrenador">
     <div class="w-full lg:w-2/3 flex justify-between items-center h-auto z-10">
       <div class="w-full flex flex-col justify-between lg:items-end h-full lg:pe-10">
-        <p class="font-lacquer text-3xl md:text-6xl leading-tight text-center lg:text-start">"Tu cuerpo puede hacerlo, <br />es tu mente la que necesitas convencer"</p>
+        <p class="font-lacquer text-3xl md:text-6xl leading-tight text-center lg:text-start lg:pt-32">"Tu cuerpo puede hacerlo, <br />es tu mente la que necesitas convencer"</p>
         <div class="flex mt-auto items-end justify-center lg:text-start gap-2">
           <span class="font-protestRevolution text-6xl md:text-8xl"><small>+</small>5</span>
           <span class="font-lacquer uppercase text-sm md:text-lg">años <br /> entrenando</span>
@@ -91,7 +91,7 @@ import Galeria from "../components/Galeria.astro";
   <section class="mt-20" id="precios">
     <div class="text-center">
       <h1 class="font-lacquer  text-3xl md:text-6xl uppercase">Precios</h1>
-      <p class="mt-7 font-robotoMono  text-xs md:text-sm w-full px-5 m-auto">En Muscle GYM, creemos que la salud y el bienestar deben estar al alcance de todos. Por eso, ofrecemos precios competitivos y accesibles sin comprometer la calidad de nuestras instalaciones y servicios.</p>
+      <p class="mt-7 font-robotoMono  text-xs md:text-sm w-full px-5 m-auto lg:px-40">En Muscle GYM, creemos que la salud y el bienestar deben estar al alcance de todos. Por eso, ofrecemos precios competitivos y accesibles sin comprometer la calidad de nuestras instalaciones y servicios.</p>
     </div>
     <div class="flex flex-col md:flex-row justify-center items-center mt-14 gap-14 md:gap-7">
       <div class="bg-custom-red p-10 text-center rounded-2xl relative w-48">
@@ -122,7 +122,7 @@ import Galeria from "../components/Galeria.astro";
   <section class="mt-20" id="galeria">
     <div class="text-center">
       <h1 class="font-lacquer text-3xl md:text-6xl uppercase">Galeria</h1>
-      <p class="mt-4 font-robotoMono text-xs md:text-sm w-full px-5 m-auto">Nuestra galería es un vistazo a la vida en Muscle GYM. Aquí encontrarás imágenes de nuestras instalaciones y de nuestros clientes en acción, superando retos y alcanzando metas.</p>
+      <p class="mt-4 font-robotoMono text-xs md:text-sm w-full px-5 m-auto lg:px-40">Nuestra galería es un vistazo a la vida en Muscle GYM. Aquí encontrarás imágenes de nuestras instalaciones y de nuestros clientes en acción, superando retos y alcanzando metas.</p>
       <div>
         <Galeria />
       </div>
