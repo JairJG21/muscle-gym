@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import LightGallery from 'lightgallery';
 import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import './Galeria.css';
 
