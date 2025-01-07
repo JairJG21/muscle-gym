@@ -1,5 +1,3 @@
 # Muscle GYM
 
-> 🧑‍🚀 Capturas
-
-![just-the-basics](https://github.com/JairJG21/muscle-gym/GymMusclev1-Laptop.png)
+> 🧑‍🚀 Las capturas son las siguientes y estan en la raiz del proyecto: GymMusclev1-Laptop.png, GymMusclev1-Tablet.png y GymMusclev1-Smartphone.png 
